@@ -1,32 +1,40 @@
 import { Ships } from '../js/ships.js';
 
 const mockLength = 2;
+const mockHeight = 1;
 
-let ship; // Declaramos fora para acessar nos testes
+let ship; // Declara fora para acessar nos testes (IMPORTANTE)
 
 beforeEach(() => {
-  ship = new Ships(mockLength); // Cria instância fresca a cada teste
+  ship = new Ships(mockLength, mockHeight); // Cria nova instância a cada teste
 });
 
-test('isSunk and takeHit work properly', () => { 
+
   // Teste interno para takeHit
   test('takes hits properly', () => {
-    ship.takeHitFunction(); // Assumindo que é o método real
-    ship.takeHitFunction();
+    ship.takeHitsFunction(); // Assumindo que é o método real
+    ship.takeHitsFunction();
 
     expect(ship.hitsTaken).toBe(2); // Acessa a propriedade da instância
   });
 
   test('isSunk returns true after full hits', () => {
-    ship.takeHit();
-    ship.takeHit(); // Agora hitsTaken === length (2)
+    ship.takeHitsFunction();
+    ship.takeHitsFunction(); // Agora hitsTaken === length (2)
 
-    expect(ship.isSunk()).toBe(true); // Assumindo que isSunk() verifica isso
+    expect(ship.isSunkFunction()).toBe(true); // Assumindo que isSunk() verifica isso
   });
 
   test('isSunk returns false before full hits', () => {
-    ship.takeHit(); 
+    ship.takeHitsFunction(); 
 
-    expect(ship.isSunk()).toBe(false);
+    expect(ship.isSunkFunction()).toBe(false);
   });
-});
+
+  /* Teste para mais tarde
+  test('Rotate functions properly', () => {
+    ship.rotateFunction()
+
+    expect(ship.mockHeight).toBe(2);
+    expect(ship.mockLength).toBe(1);
+  })*/ 
