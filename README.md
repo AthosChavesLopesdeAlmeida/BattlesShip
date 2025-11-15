@@ -11,6 +11,23 @@ Tabuleiro: 10 x 10
 
 IMPORTANTE LEMBRAR: A altura e largura dos navios NÃO SÃO as mesmas que a altura e largura do tabuleiro. TALVEZ algumas parte do código tenham que ser refatoradas por conta dessa 'confusão'. Em contrapartida, as coordenadas em board.js podem continuar como estão, por conta de que elas correspondem ao eixo 'x' e ao eixo 'y' do tabuleiro. Inclusive, as letras 'h' e 'w' foram trocadas por 'x' e 'y' em board.js (onde foi necessário)
 
+
+Devo criar um método para criar um navio?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Resumo rápido (fluxo mental antes de implementar)
 
 Mantenha separação: modelo de dados (estado do tabuleiro) e representação DOM (visual).

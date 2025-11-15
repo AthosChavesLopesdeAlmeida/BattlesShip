@@ -49,4 +49,14 @@ export class Ships {
     this.length = this.height
     return this.height, this.length; 
   };
+
+  createShipFunction(length, height) {
+    const newShip = {
+      length: length,
+      height: height,
+      hitsTaken: 0,
+      isSunk: false
+    }
+  }
+
 };
